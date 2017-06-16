@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Comment from './Comment'
 import toggleOpen from '../decorators/toggleOpen'
 
@@ -7,6 +8,12 @@ const styles = {
         display: 'none'
     }
 };
+
+CommentsList.propTypes = {
+    comments: PropTypes.array,
+    isOpen: PropTypes.bool.isRequired,
+    toggleOpen: PropTypes.func.isRequired
+}
 
 function CommentsList({comments = [], isOpen, toggleOpen}){
     return (
