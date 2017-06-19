@@ -7,6 +7,7 @@ class ArticleList extends Component{
     static propTypes = {
         openArticleId: PropTypes.oneOfType([
             PropTypes.string,
+            //почему bool ?
             PropTypes.bool
         ]),
         toggleOpenArticle: PropTypes.func.isRequired,
