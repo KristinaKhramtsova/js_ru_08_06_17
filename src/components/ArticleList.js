@@ -5,23 +5,23 @@ import Accordion from '../decorators/accordion'
 
 class ArticleList extends Component{
     static propTypes = {
-        openArticleId: PropTypes.oneOfType([
+        openItemId: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.bool
         ]),
-        toggleOpenArticle: PropTypes.func.isRequired,
+        toggleOpenItem: PropTypes.func,
         articles: PropTypes.array.isRequired
     }
 
     render() {
-        const {openArticleId, toggleOpenArticle, articles} = this.props
+        const {openItemId, toggleOpenItem, articles} = this.props
 
         const articleElements = articles.map(article =>
             <li key = {article.id}>
                 <Article
                     article = {article}
-                    isOpen = {article.id === openArticleId}
-                    toggleOpen = {toggleOpenArticle(article.id)}
+                    isOpen = {article.id === openItemId}
+                    toggleOpen = {toggleOpenItem(article.id)}
                 />
             </li>
         )
